@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 # Ikkada _name_ (double underscore) undali
-app = Flask(_name_)
+app = Flask(__name__)
 CORS(app)
 
 @app.route("/")
@@ -19,5 +19,5 @@ def contact():
         return jsonify({"status": "error", "message": str(e)}), 500
 
 # Ikkada kuda _name_ mariyu _main_ undali
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
