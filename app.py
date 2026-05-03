@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(_name_)
+app = Flask(__name__)
 CORS(app)
 
 # Database Connection using Render Environment Variable
@@ -42,5 +42,5 @@ def contact():
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
 
-if _name_ == "_main_":
+if _name_ == "__main__":
     app.run(host="0.0.0.0", port=10000)
